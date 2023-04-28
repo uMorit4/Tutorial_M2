@@ -11,12 +11,12 @@ app.use(express.json());
 /* Definição dos endpoints */
 
 // Retorna todos registros de usuários
-app.get('/usuarios', (req, res) => {
+app.get('/', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-  var sql = 'SELECT matricula, nome, strftime("%d/%m/%Y",data_admissao) AS "data de contratação" FROM usuario ORDER BY nome COLLATE NOCASE';
+  var sql = 'SELECT matricula, nome, strftime("%d/%m/%Y",data_admissao) AS "data de contratação" FROM usuario ORDER BY nome COLLATE NOCASE LIMIT 1,1';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
