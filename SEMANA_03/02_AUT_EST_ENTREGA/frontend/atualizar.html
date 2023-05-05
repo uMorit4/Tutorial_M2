@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+  </head>
+  <h1>User Updater</h1>
+
+    <form name="form1" method="post" action="/personUpdate">
+        NAME: <input type="text" id="name" name="name" size="50" value="">
+        <br>
+        PHOTO: <input type="e-mail" id="photo" name="photo" value="">
+        <br>
+        ROLE: <input type="phone" id="role" name="role" value="">
+        <br>
+        <input type="hidden" id="idp" name="idp" value="">
+        
+        <input type="submit" value="ATUALIZAR">  
+    </form>    
+
+    <script>
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        url = '/personUpdate?idp='+url.searchParams.get("idp");
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let persons = data;
+
+            persons.map(function(person) {
+                document.getElementById('idp').value = person.idp;
+                document.getElementById('name').value = person.name;
+                document.getElementById('photo').value = person.photo;
+                document.getElementById('role').value = person.role;
+            });
+            alert(response.json());
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
