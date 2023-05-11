@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "curriculo",
+            "database": "${workspaceFolder:02_AUT_EST_ENTREGA}/data/CurriculoPedroMorita.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
