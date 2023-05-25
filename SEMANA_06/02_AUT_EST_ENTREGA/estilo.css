@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: 0.5;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: var(--background);
+	color: var(--secondary);
+	transition: 0.5;
+}
+
+header {
+	text-align: center;
+	padding: 20px;
+	background-color: var(--primary);
+	color: var(--main);
+	transition: 0.5;
+}
+
+h1 {
+	font-size: 24px;
+	margin-bottom: 5px;
+	transition: 0.5;
+}
+
+h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	transition: 0.5;
+}
+
+p {
+	margin-bottom: 10px;
+	transition: 0.5;
+}
+
+ul {
+	margin-bottom: 10px;
+	transition: 0.5;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 20px;
+	transition: 0.5;
+}
+
+.group {
+	width: calc(33.33% - 40px);
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: var(--background);
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: 0.5;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	.group {
+		width: 100%;
+	}
+}
+
+button:hover {
+	color: black;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5;
+}
+
+
+:root{
+	--primary:#0077B5;
+	--secondary: #333;
+	--background: #fff;
+	--main: #fff;
+}
+
+
+.dark-mode {
+	--primary: #cc8737;
+	--secondary: #fff;
+	--background: #202020;
+	--main: #222c5f;
+  }
+  
+  .dark-mode body {
+	background-color: var(--background);
+	color: var(--secondary);
+	transition: 0.5;
+  }
+  
+  .dark-mode header {
+	background-color: var(--primary);
+	color: var(--background);
+	transition: 0.5;
+  }
+  
+  .dark-mode button {
+	background-color: var(--primary);
+	color: var(--background);
+	transition: 0.5;
+  }
+  
+  .more {
+	display: none;
+	transition: 0.5;
+  }
+  
+  button {
+	margin-top: 25px;
+	display: block;
+	border: none;
+	padding: 6px 18px;
+	float: right;
+	transition: 0.5;
+  }
+  
+  button:hover {
+	color: black;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5;
+  }
